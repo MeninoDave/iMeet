@@ -1,0 +1,77 @@
+body.dark-mode {
+    background-color: #333 !important;
+    border-color: #000 !important;
+    color: #fff !important;
+  }
+  
+  body.dark-mode .nav-tabs .nav-link {
+    background-color: #343a40 !important;
+    border-color: #000 !important;
+    color: #fff !important;
+  }
+
+  body.dark-mode .card-body{
+    background-color: #616b75 !important;
+    border-color: #000 !important;
+    color: #fff !important;
+  } 
+
+  #sidebar {
+    position: fixed;
+    height: 100%;
+    width: 250px; /* Largura desejada para a barra lateral */
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding-top: 3.5rem; /* Ajuste para evitar a sobreposição com a barra de navegação superior */
+    background-color: #343a40; /* Cor de fundo da barra lateral */
+  }
+
+  #sidebar .nav-link {
+    color: #fff !important; /* Cor dos links na barra lateral */
+  }
+
+  #sidebar .nav-link:hover {
+    background-color: #555; /* Cor de fundo ao passar o mouse sobre os links */
+  }
+
+  #sidebar .active {
+    background-color: #007bff; /* Cor de fundo do link ativo */
+  }
+
+  /* Ajuste para o conteúdo principal começar após a barra lateral */
+  #content {
+    margin-left: 250px; /* Largura da barra lateral */
+  }
+
+div#videos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+div#videos > video {
+    background: black;
+    width: 640px;
+    height: 100%;
+    display: block;
+    margin: 1em;
+}
+
+#load {
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  body, #message {
+      margin-top: 0;
+      background: white;
+      box-shadow: none;
+  }
+
+  body {
+      border-top: 16px solid #ffa100;
+  }
+}

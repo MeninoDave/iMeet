@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>iMeet</title>
+    <!-- Bootstrap e Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-auto">
+                <h2>
+                    <img src="iMeet-claro.png" alt="iMeet Light" height="50" id="logoImage">
+                </h2>
+            </div>
+            <div class="col-auto">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="themeSwitch">
+                    <label class="form-check-label" for="themeSwitch">
+                        <i class="bi-moon"></i>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Barra lateral retrátil -->
+                <nav id="sidebar">
+                    <div class="position-sticky">
+                        <img src="iMeet-escuro.png" alt="iMeet Dark" height="50" id="logoImage">
+                        <br>
+                        <br>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="reuniao.html">
+                                    Criar/Entrar em Reunião
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#minhasReunioesTab" data-bs-toggle="tab">
+                                    Minhas Reuniões
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#usuarioTab" data-bs-toggle="tab">
+                                    Usuário
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">
+                                    Desconectar
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Conteúdo principal -->
+                <main id="content" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="criarReuniaoTab">
+                            <h2>Criar Reunião</h2>
+                            <!-- Conteúdo específico da aba "Criar Reunião" -->
+                        </div>
+                        <div class="tab-pane fade" id="minhasReunioesTab">
+                            <h2>Minhas Reuniões</h2>
+                            <!-- Conteúdo específico da aba "Minhas Reuniões" -->
+                        </div>
+                        <div class="tab-pane fade" id="usuarioTab">
+                            <h2>Informações do Usuário</h2>
+                            <!-- Conteúdo específico da aba "Usuário" -->
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
