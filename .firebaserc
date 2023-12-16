@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "fir-rtc-89b99",
+    "chat-video": "fir-rtc-8bf2b"
+  },
+  "targets": {},
+  "etags": {}
+}
