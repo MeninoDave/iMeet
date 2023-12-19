@@ -46,10 +46,10 @@
               <!-- Tab de Login -->
               <div class="tab-pane fade show active" id="login">
                 <h3 class="card-title text-center">Entrar</h3>
-                <form>
+                <form action = "" id = "loginForm">
                   <div class="mb-3">
-                    <label for="login-username" class="form-label">Usuário</label>
-                    <input type="text" class="form-control" id="login-username" name="login-username" required>
+                    <label for="login-email" class="form-label">E-mail</label>
+                    <input type="text" class="form-control" id="login-email" name="login-username" required>
                   </div>
                   <div class="mb-3">
                     <label for="login-password" class="form-label">Senha</label>
@@ -59,15 +59,15 @@
                     <input type="checkbox" class="form-check-input" id="remember">
                     <label class="form-check-label" for="remember">Lembrar-me</label>
                   </div>
-                  <button type="submit" onclick="redirectToMenuUsuario()" class="btn btn-primary w-100">Login</button>
+                  <button type="submit"  class="btn btn-primary w-100">Login</button>
                 </form>
               </div>
               <!-- Tab de Registro -->
               <div class="tab-pane fade" id="register">
                 <h3 class="card-title text-center">Novo Usuário</h3>
-                <form>
+                <form action = "" id = "registerForm">
                   <div class="mb-3">
-                    <label for="register-username" class="form-label">Usuário</label>
+                    <label for="register-username" class="form-label">Nome</label>
                     <input type="text" class="form-control" id="register-username" name="register-username" required>
                   </div>
                   <div class="mb-3">
@@ -79,8 +79,8 @@
                     <input type="password" class="form-control" id="register-password" name="register-password" required>
                   </div>
                   <div class="mb-3">
-                    <label for="register-password" class="form-label">Confirmar Senha</label>
-                    <input type="password" class="form-control" id="register-password" name="register-password" required>
+                    <label for="register-confirm-password" class="form-label">Confirmar Senha</label>
+                    <input type="password" class="form-control" id="register-confirm-password" name="register-password" required>
                   </div>
                   <button type="submit" class="btn btn-primary w-100">Registrar</button>
                 </form>
@@ -92,7 +92,9 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
+  <script src="app.js"></script>
+
 
 </body>
 </html>
