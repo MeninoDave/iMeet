@@ -1,6 +1,13 @@
+
+import { db, database, auth } from "../firebaseConfig.js";
+import {collection, addDoc, query, where, getDocs} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 const themeSwitch = document.getElementById('themeSwitch');
 const body = document.body; 
 const title = document.querySelector('h2');
+const usersCollectionRef = collection(db,"users");
+
+
+
 
 //Dark Mode
 themeSwitch.addEventListener('change', () => {
@@ -13,11 +20,69 @@ themeSwitch.addEventListener('change', () => {
   }
 });
 
-//Botao Login
-document.getElementById('loginForm').addEventListener('submit', function (e) {
+//Botao Registrar
+document.getElementById('registerForm').addEventListener('submit', function (e) {
     // Impedir o envio padrão do formulário
     e.preventDefault();
+    let username = document.getElementById("register-username").value;
+    let email = document.getElementById("register-email").value;
+    let password = document.getElementById("register-password").value;
+    let confirmpassword = document.getElementById("register-confirm-password").value;
+    if(password.value != confirmpassword.value){
+      alert("campos Senha e Confirmar Senha devem ser iguais")
+    } else{
+      createUser(username, email, password);
+      console.log(username, email, password);
+    }
 });
+
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+  // Impedir o envio padrão do formulário
+  e.preventDefault();
+  let email = document.getElementById("login-email").value;
+  let password = document.getElementById("login-password").value;
+  const q = query(usersCollectionRef, where("email", "==", email, ""), where("senha", "==", password));
+  findUser(q);
+  
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Atualizando os elementos HTML com os valores
+  document.getElementById("userEmail").textContentL= uEmail;
+  document.getElementById("userName").textContent = uNome;
+  console.log("oi");
+});
+
+const findUser = async (q) => {
+  const u = await getDocs(q);
+  if(u.empty == false){
+    const uEmail = u.docs[0]._document.data.value.mapValue.fields.email.stringValue;
+    const uNome = u.docs[0]._document.data.value.mapValue.fields.nome.stringValue;
+    console.log(uEmail, uNome);
+    window.location.href = 'menuUsuario.html';
+    atualizaDados();
+  }else{
+    alert("Usuário não encontrado");
+  }
+
+
+}
+
+
+
+const createUser = async (username, email, password ) => {
+  await addDoc(usersCollectionRef, {nome: username, email: email, senha: password})
+}
+
+function atualizaDados() {
+
+  document.getElementById("userEmail").innerHTML= uEmail;
+  document.getElementById("userName").innerHTML = uNome;
+}
 
 // Função para redirecionar para a página menuUsuario.html
 function redirectToMenuUsuario() {
